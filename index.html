@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session and Local Storage</title>
+  </head>
+  <body>
+    <script>
+      //       // Local Storage
+      //     localStorage.setItem("todo", "feed the cat");// first peramiter is the key second is value
+      //     localStorage.setItem("user", "feed the cat");
+      //     localStorage.setItem("todo", "food myself");
+      // //   localStorage.clear(); // clears local storage
+
+      //   //     //Session Storage
+      //   sessionStorage.setItem('todoList', 'session feeding cat');
+
+      // // // Getting Stuff Back
+      // const user = localStorage.getItem('user');
+      // console.log(user);// feed the cat
+      // console.log(typeof user); // string
+
+    //   const todoList = ["feed the cat", " wash", " listen to music"];
+      const todoList = {
+          todo1: 'feeding the cat',
+          todo2: 'feeding wash',
+          todo3: 'listen to music'
+      };
+
+
+    //   localStorage.setItem('todos', todoList);
+      localStorage.setItem('todos', JSON.stringify(todoList)); // turns array into a string while keeping structure
+
+      const retreved = JSON.parse(localStorage.getItem('todos'));
+
+      console.log(retreved);
+
+    </script>
+  </body>
+</html>
